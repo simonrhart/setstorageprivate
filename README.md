@@ -4,15 +4,17 @@ This is an example on how to enumerate all Azure storage accounts in a passed Az
 # Usage
 
 For each Azure subscription edit file ./src/updatesubscriptions.sh to add a separate line item for every subscription that you want to update. For example we have 2 subscriptions:
-
+```
 az.cmd login
-./storagecompliance.sh <subscriptionId1>
-./storagecompliance.sh <subscriptionId2>
+./storagecompliance.sh subscriptionId1
+./storagecompliance.sh subscriptionId2
+```
 
 Once you are happy with this file simply run the following from a terminal bash if on Windows will work fine:
 
+```
 $ ./src/updatesubscriptions.sh
-
+```
 
 
 
