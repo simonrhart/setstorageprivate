@@ -6,7 +6,6 @@ This is an example on how to enumerate all Azure storage accounts in a passed Az
 For each Azure subscription edit file ./src/updatesubscriptions.sh to add a separate line item for every subscription that you want to update. For example we have 2 subscriptions:
 
 az.cmd login
-# pass in every subscription that needs all anon storage account access turned off.
 ./storagecompliance.sh <subscriptionId1>
 ./storagecompliance.sh <subscriptionId2>
 
