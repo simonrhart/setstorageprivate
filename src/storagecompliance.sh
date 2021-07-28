@@ -26,7 +26,7 @@ do
      echo 'Setting storage account:' $storageAccountName ' public access configuration to 'disabled''
 
      # set public access to off at the account level.
-     az storage account update --name $storageAccountName --allow-blob-public-access false 
+     az storage account update --name $storageAccountName --allow-blob-public-access false --output yaml
 
      # now we iterate every container within this storage account and turn off anon access. First get key1 for the current storage account.
      echo "Retrieving storage account key1 for storage account: " $storageAccountName
@@ -58,7 +58,7 @@ do
          storageContainer=`sed -e 's/,//g' <<<"$storageContainer"`        
          
          echo "Setting storage container: " $storageContainer " public access to 'off' for storage account: " $storageAccountName
-         az storage container set-permission --name $storageContainer --account-key $key1 --account-name $storageAccountName --public-access off
+         az storage container set-permission --name $storageContainer --account-key $key1 --account-name $storageAccountName --public-access off --output yaml
      done
 
   else
